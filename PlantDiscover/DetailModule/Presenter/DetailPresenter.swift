@@ -13,13 +13,13 @@ protocol DetailViewProtocol: class {
 }
 
 protocol DetailViewPresenterProtocol: class {
+    var plant: Plant { get set }
+    
     init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol, plant: Plant, database: DatabaseServiceProtocol)
     
     func setPlant()
     func AddToFavouritesTapped()
     func setPlantIsFavourite()
-    
-    var plant: Plant { get set }
 }
 
 class DetailPresenter: DetailViewPresenterProtocol {

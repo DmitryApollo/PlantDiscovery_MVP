@@ -70,12 +70,5 @@ class NetworkService: NetworkServiceProtocol {
             }
         }.resume()
     }
-    
-    private func getComponents() -> URLComponents {
-        var comp = URLComponents()
-        comp.scheme = "https"
-        comp.host = "trefle.io"
-        return comp
-    }
 }
 
