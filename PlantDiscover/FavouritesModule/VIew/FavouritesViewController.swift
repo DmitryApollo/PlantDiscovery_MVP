@@ -115,6 +115,12 @@ extension FavouritesViewController: FavouritesViewProtocol {
         activityIndicator.isHidden = true
         tableView.isHidden = false
     }
+    
+    func error(error: Error) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        present(alert, animated: true)
+    }
 }
 
 extension FavouritesViewController: PlantsDetailDelegate {

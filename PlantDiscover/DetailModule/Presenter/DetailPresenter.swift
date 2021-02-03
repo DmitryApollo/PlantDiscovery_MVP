@@ -10,6 +10,7 @@ import Foundation
 
 protocol DetailViewProtocol: class {
     func setPlant(plant: Plant)
+    func error(error: Error)
 }
 
 protocol DetailViewPresenterProtocol: class {
@@ -38,31 +39,41 @@ class DetailPresenter: DetailViewPresenterProtocol {
     }
     
     func AddToFavouritesTapped() {
-        guard let array = try? databaseService.fetchPlants() else { return }
-        if let dbPlant = array.first(where: { $0.id == plant.id }) {
-            do {
-                plant.isFavourite = false
-                try databaseService.delete(plant: dbPlant)
-            } catch (let error) {
-                print(error)
+        do {
+            let array = try databaseService.fetchPlants()
+            if let dbPlant = array.first(where: { $0.id == plant.id }) {
+                do {
+                    plant.isFavourite = false
+                    try databaseService.delete(plant: dbPlant)
+                } catch (let error) {
+                    view?.error(error: error)
+                }
+            } else {
+                do {
+                    plant.isFavourite = true
+                    try databaseService.insertPlant(plant)
+                } catch (let error) {
+                    view?.error(error: error)
+                }
             }
-        } else {
-            do {
-                plant.isFavourite = true
-                try databaseService.insertPlant(plant)
-            } catch (let error) {
-                print(error)
-            }
+        } catch (let error) {
+            view?.error(error: error)
         }
+        
+        
     }
     
     func setPlantIsFavourite() {
-        guard let array = try? databaseService.fetchPlants(),
-            let plantFromDB = array.first(where: { $0.id == plant.id }) else { return }
-        plant.isFavourite = plantFromDB.isFavourite
+        do {
+            let array = try databaseService.fetchPlants()
+            guard let plantFromDB = array.first(where: { $0.id == plant.id }) else { return }
+            plant.isFavourite = plantFromDB.isFavourite
+        } catch (let error) {
+            view?.error(error: error)
+        }
     }
     
     func setPlant() {
-        self.view?.setPlant(plant: plant)
+        view?.setPlant(plant: plant)
     }
 }

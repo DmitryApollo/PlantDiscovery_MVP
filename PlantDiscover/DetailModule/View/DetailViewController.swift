@@ -144,6 +144,7 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: DetailViewProtocol {
+    
     func setPlant(plant: Plant) {
         commonNameLabel.text = plant.commonName
         scientificNameLabel.text = plant.scientificName
@@ -152,6 +153,12 @@ extension DetailViewController: DetailViewProtocol {
             imageView.contentMode = .scaleAspectFill
             imageView.loadImage(fromURL: avatarURL)
         }
+    }
+    
+    func error(error: Error) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        present(alert, animated: true)
     }
 }
 

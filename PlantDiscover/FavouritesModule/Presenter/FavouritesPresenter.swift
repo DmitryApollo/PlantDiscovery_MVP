@@ -10,6 +10,7 @@ import Foundation
 
 protocol FavouritesViewProtocol: class {
     func success()
+    func error(error: Error)
 }
 
 protocol FavouritesViewPresenterProtocol: class {
@@ -35,13 +36,22 @@ class FavouritesPresenter: FavouritesViewPresenterProtocol {
     }
     
     func getPlantsFromDB() {
-        guard let array = try? databaseService.fetchPlants() else { return }
-        plantsFromDB = array
-        view?.success()
+        do {
+            let array = try databaseService.fetchPlants()
+            plantsFromDB = array
+            view?.success()
+        } catch (let error) {
+            view?.error(error: error)
+        }
+        
     }
     
     func removePlantFromDB(plant: PlantClass) {
-        try? databaseService.delete(plant: plant)
+        do {
+            try databaseService.delete(plant: plant)
+        } catch (let error) {
+            view?.error(error: error)
+        }
     }
     
     func tapOnPlant(plant: Plant) {
