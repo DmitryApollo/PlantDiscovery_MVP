@@ -46,6 +46,22 @@ extension PlantCollectionViewCell {
 }
 
 
+extension PlantTableViewCell {
+    private struct SizeRatio {
+        static let fontSizeToBoundsHeight: CGFloat = 0.4
+        static let sizeOfImageViewMultiplier: CGFloat = 0.15
+    }
+    
+    var imageViewWidth: CGFloat {
+        return bounds.size.width * SizeRatio.sizeOfImageViewMultiplier
+    }
+    
+    var labelsFontSize: CGFloat {
+        return bounds.size.height * SizeRatio.fontSizeToBoundsHeight
+    }
+}
+
+
 extension DetailTableViewCell {
     private struct SizeRatio {
         static let fontSizeToBoundsHeight: CGFloat = 0.45

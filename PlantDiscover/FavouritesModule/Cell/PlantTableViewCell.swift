@@ -37,13 +37,13 @@ class PlantTableViewCell: UITableViewCell {
         plantImageView.clipsToBounds = true
         
         plantImageView.snp.makeConstraints { (maker) in
-            maker.width.equalTo(60)
-            maker.height.equalTo(60)
+            maker.width.equalTo(imageViewWidth)
+            maker.height.equalTo(imageViewWidth)
             maker.leading.equalToSuperview().offset(16)
             maker.centerY.equalToSuperview()
         }
         
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: labelsFontSize)
         titleLabel.adjustsFontSizeToFitWidth = false
         titleLabel.lineBreakMode = .byTruncatingTail
         
@@ -53,7 +53,7 @@ class PlantTableViewCell: UITableViewCell {
             maker.centerY.equalToSuperview().offset(-12)
         }
         
-        subtitleLabel.font = UIFont.systemFont(ofSize: 16)
+        subtitleLabel.font = UIFont.systemFont(ofSize: labelsFontSize)
         subtitleLabel.textColor = .gray
         
         subtitleLabel.snp.makeConstraints { (maker) in
