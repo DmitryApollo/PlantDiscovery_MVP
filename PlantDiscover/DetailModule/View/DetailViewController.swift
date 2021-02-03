@@ -65,7 +65,7 @@ class DetailViewController: UIViewController {
     private func setUpUI() {
         view.addSubview(imageView)
         imageView.snp.makeConstraints { (maker) in
-            maker.height.equalTo(248)
+            maker.height.equalTo(imageViewHeight)
             maker.leading.equalToSuperview()
             maker.trailing.equalToSuperview()
             maker.top.equalToSuperview()

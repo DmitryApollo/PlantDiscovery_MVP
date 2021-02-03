@@ -25,6 +25,7 @@ extension UIDevice {
     }
 }
 
+
 extension PlantCollectionViewCell {
     private struct SizeRatio {
         static let fontSizeToBoundsHeight: CGFloat = 0.065
@@ -44,6 +45,18 @@ extension PlantCollectionViewCell {
     }
 }
 
+
+extension DetailTableViewCell {
+    private struct SizeRatio {
+        static let fontSizeToBoundsHeight: CGFloat = 0.45
+    }
+    
+    var labelsFontSize: CGFloat {
+        return bounds.size.height * SizeRatio.fontSizeToBoundsHeight
+    }
+}
+
+
 extension PlantsViewController {
     private struct SizeRatio {
         static let cellWidthMultiplier: CGFloat = 3.43
@@ -53,5 +66,16 @@ extension PlantsViewController {
         let width = view.bounds.width / SizeRatio.cellWidthMultiplier
         return CGSize(width: width,
                       height: width * (UIDevice.current.userInterfaceIdiom == .pad ? 1.38 : 1.60))
+    }
+}
+
+
+extension DetailViewController {
+    private struct SizeRatio {
+        static let imageHeightMultiplier: CGFloat = 0.42
+    }
+    
+    var imageViewHeight: CGFloat {
+        return view.bounds.height * SizeRatio.imageHeightMultiplier
     }
 }

@@ -37,25 +37,25 @@ class DetailTableViewCell: UITableViewCell {
     private func setUpStackView() {
         addSubview(stackView)
         
-        mainInformationLabel.font = UIFont.boldSystemFont(ofSize: 28)
+        mainInformationLabel.font = UIFont.boldSystemFont(ofSize: labelsFontSize + 6)
         mainInformationLabel.text = "Main Information"
         
-        familyCommonNameLabel.font = UIFont.systemFont(ofSize: 22)
+        familyCommonNameLabel.font = UIFont.systemFont(ofSize: labelsFontSize)
         familyCommonNameLabel.text = "Family name: "
         
-        rankLabel.font = UIFont.systemFont(ofSize: 22)
+        rankLabel.font = UIFont.systemFont(ofSize: labelsFontSize)
         rankLabel.text = "Rank: "
         
-        statusLabel.font = UIFont.systemFont(ofSize: 22)
+        statusLabel.font = UIFont.systemFont(ofSize: labelsFontSize)
         statusLabel.text = "Status: "
         
-        authorLabel.font = UIFont.systemFont(ofSize: 22)
+        authorLabel.font = UIFont.systemFont(ofSize: labelsFontSize)
         authorLabel.text = "Author: "
         
-        yearLabel.font = UIFont.systemFont(ofSize: 22)
+        yearLabel.font = UIFont.systemFont(ofSize: labelsFontSize)
         yearLabel.text = "Year: "
         
-        bibliographyLabel.font = UIFont.systemFont(ofSize: 16)
+        bibliographyLabel.font = UIFont.systemFont(ofSize: labelsFontSize - 4)
         bibliographyLabel.text = "Bibliography: "
         
         stackView.addArrangedSubview(mainInformationLabel)
@@ -69,14 +69,13 @@ class DetailTableViewCell: UITableViewCell {
         
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
-        stackView.spacing = 0
+        stackView.spacing = 8
         stackView.backgroundColor = .white
         
         stackView.snp.makeConstraints { (maker) in
             maker.leading.equalToSuperview().offset(8)
             maker.top.equalToSuperview()
             maker.trailing.equalToSuperview().offset(-8)
-            maker.height.equalTo(325)
         }
     }
     
