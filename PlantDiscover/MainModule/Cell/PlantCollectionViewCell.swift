@@ -27,15 +27,15 @@ class PlantCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         
         imageView.snp.makeConstraints { (maker) in
-            maker.width.equalTo(100)
-            maker.height.equalTo(100)
+            maker.width.equalTo(imageViewWidth)
+            maker.height.equalTo(imageViewWidth)
             maker.centerX.equalToSuperview()
-            maker.top.equalToSuperview().offset(8)
+            maker.top.equalToSuperview().offset(topImageViewOffset)
         }
         imageView.backgroundColor = .white
         
         addSubview(titleLabel)
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 13)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: labelsFontSize + 1)
         titleLabel.adjustsFontSizeToFitWidth = false
         titleLabel.lineBreakMode = .byTruncatingTail
         titleLabel.layer.cornerRadius = 5
@@ -43,16 +43,15 @@ class PlantCollectionViewCell: UICollectionViewCell {
         titleLabel.layer.masksToBounds = true
         
         titleLabel.snp.makeConstraints { (maker) in
-            maker.top.equalTo(imageView.snp.bottom).offset(8)
-            maker.leading.equalToSuperview().offset(10)
-            maker.trailing.equalToSuperview().offset(-10)
+            maker.top.equalTo(imageView.snp.bottom).offset(topImageViewOffset)
+            maker.leading.equalToSuperview().offset(topImageViewOffset)
+            maker.trailing.equalToSuperview().offset(-topImageViewOffset)
             maker.centerX.equalToSuperview()
-            maker.height.equalTo(20)
         }
         titleLabel.backgroundColor = .white
         
         addSubview(subtitleLabel)
-        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+        subtitleLabel.font = UIFont.systemFont(ofSize: labelsFontSize)
         subtitleLabel.textColor = .gray
         subtitleLabel.numberOfLines = 2
         subtitleLabel.lineBreakMode = .byWordWrapping
@@ -60,8 +59,8 @@ class PlantCollectionViewCell: UICollectionViewCell {
         
         subtitleLabel.snp.makeConstraints { (maker) in
             maker.top.equalTo(titleLabel.snp.bottom).offset(8)
-            maker.leading.equalToSuperview().offset(10)
-            maker.trailing.equalToSuperview().offset(-10)
+            maker.leading.equalToSuperview().offset(topImageViewOffset)
+            maker.trailing.equalToSuperview().offset(-topImageViewOffset)
             maker.centerX.equalToSuperview()
         }
     }

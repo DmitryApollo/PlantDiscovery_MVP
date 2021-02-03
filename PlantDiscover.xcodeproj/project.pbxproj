@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7B4DAD9025C589F7003C3C35 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4DAD8F25C589F7003C3C35 /* MainNavigationController.swift */; };
 		7B4DAD9225C5AD4E003C3C35 /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4DAD9125C5AD4E003C3C35 /* UIImageView+Cache.swift */; };
+		7B509FA025CB15D0001240D6 /* Resolutions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B509F9F25CB15D0001240D6 /* Resolutions.swift */; };
 		7BA1E98825C377F300002EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1E98725C377F300002EE0 /* AppDelegate.swift */; };
 		7BA1E98A25C377F300002EE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1E98925C377F300002EE0 /* SceneDelegate.swift */; };
 		7BA1E99225C377F300002EE0 /* PlantDiscover.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1E99025C377F300002EE0 /* PlantDiscover.xcdatamodeld */; };
@@ -37,6 +38,7 @@
 		52E9E9C2F0808AE82625D056 /* Pods-PlantDiscover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantDiscover.debug.xcconfig"; path = "Target Support Files/Pods-PlantDiscover/Pods-PlantDiscover.debug.xcconfig"; sourceTree = "<group>"; };
 		7B4DAD8F25C589F7003C3C35 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		7B4DAD9125C5AD4E003C3C35 /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
+		7B509F9F25CB15D0001240D6 /* Resolutions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolutions.swift; sourceTree = "<group>"; };
 		7BA1E98425C377F300002EE0 /* PlantDiscover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantDiscover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA1E98725C377F300002EE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA1E98925C377F300002EE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				7B4DAD9125C5AD4E003C3C35 /* UIImageView+Cache.swift */,
+				7B509F9F25CB15D0001240D6 /* Resolutions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				7BA1E99F25C3783600002EE0 /* AssemblyModelBuilder.swift in Sources */,
 				7BA1E99225C377F300002EE0 /* PlantDiscover.xcdatamodeld in Sources */,
 				7BA1E9AD25C3784800002EE0 /* PlantStruct.swift in Sources */,
+				7B509FA025CB15D0001240D6 /* Resolutions.swift in Sources */,
 				7BA1E9D325C4850B00002EE0 /* PlantClass+CoreDataClass.swift in Sources */,
 				7BA1E9B825C3785B00002EE0 /* DetailPresenter.swift in Sources */,
 				7BA1E9C125C445E100002EE0 /* DatabaseService.swift in Sources */,

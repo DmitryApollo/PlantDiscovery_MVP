@@ -47,7 +47,7 @@ class PlantsViewController: UIViewController {
     private func setUpCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: view.frame.width / 3.41, height: 180)
+        layout.itemSize = cellSize
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView?.register(PlantCollectionViewCell.self, forCellWithReuseIdentifier: "plantCell")
