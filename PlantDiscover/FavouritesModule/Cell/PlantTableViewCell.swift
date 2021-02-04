@@ -21,7 +21,15 @@ class PlantTableViewCell: UITableViewCell {
         
         addSubview(mainView)
         mainView.layer.cornerRadius = 10
-        mainView.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+        mainView.backgroundColor = UIColor { traitCollection in
+            switch traitCollection.userInterfaceStyle {
+            case .dark:
+                return UIColor(white: 0.3, alpha: 1.0)
+            default:
+                return UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+            }
+        }
+            
         mainView.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview().offset(8)
             maker.bottom.equalToSuperview().offset(-8)

@@ -38,6 +38,7 @@ class FavouritesViewController: UIViewController {
             maker.trailing.equalToSuperview()
             maker.bottom.equalToSuperview()
         }
+        tableView.backgroundColor = .systemBackground
     }
     
     private func setUpActivityIndicator() {

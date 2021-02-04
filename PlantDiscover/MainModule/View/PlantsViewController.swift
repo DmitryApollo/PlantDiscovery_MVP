@@ -27,7 +27,7 @@ class PlantsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         presenter.getPlants(page: page)
         setUpSearchController()
         setUpCollectionView()
@@ -63,6 +63,8 @@ class PlantsViewController: UIViewController {
             maker.trailing.equalToSuperview()
             maker.bottom.equalToSuperview()
         }
+        
+        collectionView?.backgroundColor = .systemBackground
     }
     
     private func setUpActivityIndicator() {

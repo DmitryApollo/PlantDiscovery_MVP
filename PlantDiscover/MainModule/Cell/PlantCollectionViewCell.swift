@@ -35,6 +35,14 @@ class PlantCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .white
         
         addSubview(titleLabel)
+        titleLabel.backgroundColor = UIColor { traitCollection in
+            switch traitCollection.userInterfaceStyle {
+            case .dark:
+                return UIColor(white: 0.3, alpha: 1.0)
+            default:
+                return .white
+            }
+        }
         titleLabel.font = UIFont.boldSystemFont(ofSize: labelsFontSize + 1)
         titleLabel.adjustsFontSizeToFitWidth = false
         titleLabel.lineBreakMode = .byTruncatingTail
@@ -48,7 +56,6 @@ class PlantCollectionViewCell: UICollectionViewCell {
             maker.trailing.equalToSuperview().offset(-topImageViewOffset)
             maker.centerX.equalToSuperview()
         }
-        titleLabel.backgroundColor = .white
         
         addSubview(subtitleLabel)
         subtitleLabel.font = UIFont.systemFont(ofSize: labelsFontSize)

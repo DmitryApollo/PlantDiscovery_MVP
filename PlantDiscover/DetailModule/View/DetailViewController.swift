@@ -64,6 +64,7 @@ class DetailViewController: UIViewController {
     
     private func setUpUI() {
         view.addSubview(imageView)
+        imageView.backgroundColor = .systemBackground
         imageView.snp.makeConstraints { (maker) in
             maker.height.equalTo(imageViewHeight)
             maker.leading.equalToSuperview()
@@ -108,7 +109,7 @@ class DetailViewController: UIViewController {
             maker.height.equalTo(48)
         }
     
-        favouritesView.backgroundColor = .white
+        favouritesView.backgroundColor = .systemBackground
         favouritesView.addSubview(favouritesActionButton)
         
         favouritesActionButton.addTarget(self, action: #selector(AddOrRemoveFromFavouritesAction), for: .touchUpInside)
